@@ -12,7 +12,7 @@ encrypt:
   key-store:
     location: classpath:jks/DEV/enc_key.jks
     password: changeit
-    alias: localhost-ep
+    alias: config-server-key
     secret: changeit
 spring:
   application:
@@ -24,11 +24,12 @@ spring:
           enabled: true
         git:
           uri: git@github.com:animeshmalik/configrepo.git
+          defaultLabel: master
           search-paths:
             - DEV/{application}
           ignoreLocalSshSettings: true
           clone-on-start: true
           privateKey: |
             -----BEGIN OPENSSH PRIVATE KEY-----
-            some key
+            
             -----END OPENSSH PRIVATE KEY-----
