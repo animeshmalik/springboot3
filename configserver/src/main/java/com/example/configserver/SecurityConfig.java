@@ -20,7 +20,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry ->
                         authorizationManagerRequestMatcherRegistry.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")
-                                .requestMatchers("/decrypt").authenticated()
+                                .requestMatchers("/decrypt").hasAnyRole("DDOADMIN")
                                 .requestMatchers("/encrypt").permitAll()
                                 .anyRequest().permitAll())
                 .httpBasic(Customizer.withDefaults())
