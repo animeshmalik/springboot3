@@ -7,12 +7,21 @@ server:
     trust-store: classpath:jks/DEV/public.jks
     trust-store-password: changeit
     trust-store-type: JKS
+
+encrypt:
+  key-store:
+    location: classpath:jks/DEV/enc_key.jks
+    password: changeit
+    alias: localhost-ep
+    secret: changeit
 spring:
   application:
     name: configserver
   cloud:
     config:
       server:
+        encrypt:
+          enabled: true
         git:
           uri: git@github.com:animeshmalik/configrepo.git
           search-paths:
