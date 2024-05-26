@@ -12,7 +12,7 @@ encrypt:
   key-store:
     location: classpath:jks/DEV/enc_key.jks
     password: changeit
-    alias: config-server-key
+    alias: localhost-ep
     secret: changeit
 spring:
   application:
