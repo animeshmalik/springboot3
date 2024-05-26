@@ -1,0 +1,71 @@
+server:
+  port: 8888
+  ssl:
+    key-store: classpath:jks/DEV/private.jks
+    key-store-password: changeit
+    key-store-type: JKS
+    trust-store: classpath:jks/DEV/public.jks
+    trust-store-password: changeit
+    trust-store-type: JKS
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:animeshmalik/configrepo.git
+          search-paths:
+            - DEV/{application}
+          ignoreLocalSshSettings: true
+          clone-on-start: true
+          privateKey: |
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            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
+            -----END OPENSSH PRIVATE KEY-----

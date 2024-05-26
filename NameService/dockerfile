@@ -1,0 +1,4 @@
+FROM openjdk:17-ea-31-jdk
+EXPOSE 9910
+COPY target/NameService-0.0.1-SNAPSHOT.jar NameService-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/NameService-0.0.1-SNAPSHOT.jar"]

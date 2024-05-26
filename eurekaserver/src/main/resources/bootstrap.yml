@@ -1,0 +1,17 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eurekaserver
+  cloud:
+    config:
+      uri: https://localhost:8888
+      tls:
+        enabled: true
+        key-store: classpath:private.jks
+        key-store-type: JKS
+        key-store-password: changeit
+        key-password: changeit
+        trust-store: classpath:public.jks
+        trust-store-type: JKS
+        trust-store-password: changeit
